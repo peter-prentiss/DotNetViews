@@ -9,5 +9,17 @@ namespace DotNetViews.Infrastructure
         {
             return ViewEngineResult.NotFound(viewPath, new string[] { "(Debug View Engine - Get View" });
         }
+
+        public ViewEngineResult FindView(ActionContext context, string viewName, bool isMainPage)
+        {
+            if (viewName == "DebugData")
+            {
+                return ViewEngineResult.Found(viewName, new DebugDataView());
+            }
+            else
+            {
+                return ViewEngineResult.NotFound(viewName, new string[] { "Debug View Engine - Find View" });
+            }
+        }
     }
 }
