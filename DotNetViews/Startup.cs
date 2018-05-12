@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Mvc;
+using Views.Infrastructure;
 
 namespace DotNetViews
 {
@@ -8,6 +10,10 @@ namespace DotNetViews
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.Configure<MvcViewOptions>(OptionsServiceCollectionExtensions =>
+            {
+                OptionsServiceCollectionExtensions.ViewEngines.Insert(0, new DebugDataViewEngine());
+            });
         }
         public void Configure(IApplicationBuilder app)
         {
