@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ViewEngines;
+using DotNetViews.Infrastructure;
 
 namespace Views.Infrastructure
 {
