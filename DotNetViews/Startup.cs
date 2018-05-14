@@ -10,9 +10,10 @@ namespace DotNetViews
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.Configure<MvcViewOptions>(OptionsServiceCollectionExtensions =>
+            services.Configure<MvcViewOptions>(options =>
             {
-                OptionsServiceCollectionExtensions.ViewEngines.Insert(0, new DebugDataViewEngine());
+                options.ViewEngines.Clear();
+                options.ViewEngines.Insert(0, new DebugDataViewEngine());
             });
         }
         public void Configure(IApplicationBuilder app)
