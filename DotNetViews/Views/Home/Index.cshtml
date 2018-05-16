@@ -1,5 +1,19 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model string[]
+@{ Layout = null; }
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Razor</title>
+    <link asp-href-include="lib/bootstrap/dist/css/*.min.css" rel="stylesheet" />
+</head>
+<body class="panel-body">
+    This is a list of fruit names:
+    @foreach (string name in Model) {
+        <span><b>@name</b></span>
+    }
+</body>
+</html>
+          
+
