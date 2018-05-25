@@ -15,12 +15,13 @@
         This is part of the layout
     </div>
     @if (IsSectionDefined("Footer")) {
-@RenderSection("Footer")
-} else {
-<h4>This is the default footer</h4>
-}
-<div class="bg-info">
-    This is part of the layout
-</div>
+    @RenderSection("Footer")
+    } else {
+        <h4>This is the default footer</h4>
+    }
+    @RenderSection("scripts")
+    <div class="bg-info">
+        This is part of the layout
+    </div>
 </body>
 </html>
