@@ -8,7 +8,8 @@
 </head>
 <body class="panel-body">
     This is the List View
-    @Html.Partial("MyPartial")
+    @Html.Partial("MyStronglyTypedPartial",
+        new string[] { "Apple", "Orange", "Pear" })
 </body>
 </html>
 </html>
