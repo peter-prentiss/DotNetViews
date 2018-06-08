@@ -23,5 +23,19 @@ namespace DotNetViews.Infrastructure
                 context.Values["color"] = color;
             }
         }
+        public IEnumerable<string> ExpandViewLocations(
+                ViewLocationExpanderContext context,
+                IEnumerable<string> viewLocations) {
+            string color;
+            context.Values.TryGetValue("color", out color);
+            foreach (string location in viewLocations) {
+                if (!string.IsNullOrEmpty(color)) {
+                    yield return location.Replace("{0}", color);
+                }
+                else {
+                    yield return location;
+                }
+            }
+        }
     }
 }
