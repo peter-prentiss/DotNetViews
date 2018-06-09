@@ -13,6 +13,7 @@ namespace DotNetViews
             services.AddMvc();
             services.Configure<RazorViewEngineOptions>(options => {
                 options.ViewLocationExpanders.Add(new SimpleExpander());
+                options.ViewLocationExpanders.Add(new ColorExpander());
             });
         }
         public void Configure(IApplicationBuilder app)
